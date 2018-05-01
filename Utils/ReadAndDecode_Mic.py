@@ -3,7 +3,7 @@ import tensorflow as tf
 
 
 # 读取tfrecords数据
-def read_and_decode(filename):
+def read_and_decode_mic(filename):
     # 根据文件名生成一个队列
     filename_queue = tf.train.string_input_producer([filename])
 
@@ -20,3 +20,5 @@ def read_and_decode(filename):
     label = tf.cast(features['label'], tf.int64)
 
     return img, label
+
+

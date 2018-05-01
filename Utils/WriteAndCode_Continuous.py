@@ -53,9 +53,9 @@ def write_to_tfrecords(filename, data_dir):
         type = file[0]
         index = int(-1)
 
-        # A B C I J 0.5S num_flag=1
-        # F G 1S  num_flag=2
-        # H 2S num_flag=3
+        # A B C I J    0.5S num_flag=1
+        # F G          1S   num_flag=2
+        # H            2S   num_flag=3
 
         num_flag = -1
         if type == 'A':
