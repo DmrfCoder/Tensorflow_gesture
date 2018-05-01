@@ -2,7 +2,8 @@
 
 import tensorflow as tf
 from tensorflow.contrib import rnn
-from Utils.ReadAndDecode import read_and_decode
+
+from Utils.ReadAndDecode_Mic import read_and_decode
 
 from Net.CNN_Init import weight_variable, bias_variable, conv2d, max_pool_2x2
 log_path = '/home/wjyyy/Tensorflow/Log'

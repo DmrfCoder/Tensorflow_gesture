@@ -4,20 +4,23 @@ import tensorflow as tf
 import matplotlib as plt
 from sklearn.metrics import confusion_matrix
 import numpy as np
-from Utils.ReadAndDecode import read_and_decode
+from Utils.ReadAndDecode_Mic import read_and_decode
+
 from Net.CNN_Init import weight_variable, bias_variable, conv2d, max_pool_2x2
-#读取训练测试数据
-train_path = '/home/caiyiwu/下载/data18.4.22/mic_train_5ms.tfrecords'
-val_path = '/home/caiyiwu/下载/data18.4.22/mic_test_5ms.tfrecords'
+
+log_path = '/home/dmrf/tensorflow_gesture_data/Log'
+train_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_train_5ms.tfrecords'
+val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_test_5ms.tfrecords'
 x_train, y_train = read_and_decode(train_path)
 x_val, y_val = read_and_decode(val_path)
 
-w = 550 #0.5秒的数据量
-h = 8 #
-c = 2 #通道数
-labels_type = 13#微手势种类数
+w = 550
+h = 8
+c = 2
+labels_type = 13
 
 # 占位符
+
 # [batch, in_height, in_width, in_channels]
 x = tf.placeholder(tf.float32, shape=[None, h, w, c], name='input')
 y_label = tf.placeholder(tf.int64, shape=[None, ])
@@ -46,7 +49,7 @@ def add_net(in_x):
     w_fc1 = weight_variable([8 * 6 * 64, 256])
     b_fc1 = bias_variable([256])
     h_pool3_flat = tf.reshape(h_pool3, [-1, 8 * 6 * 64])
-    h_fc1 = tf.nn.relu(tf.matmul(h_pool3_flat, w_fc1) + b_fc1)
+    h_fc1 = tf.nn.relu(tf.matmul(h_pool3_flat, w_fc1) + b_fc1,name="fullconnection1")
 
     w_fc2 = weight_variable([256, labels_type])
     b_fc2 = bias_variable([labels_type])
@@ -94,6 +97,7 @@ Test_iterations = test_count / test_batch #测试迭代次数
 train_x_batch, train_y_batch = tf.train.shuffle_batch([x_train, y_train],
                                                       batch_size=train_batch, capacity=train_capacity,
                                                       min_after_dequeue=min_after_dequeue_train)
+
 # 使用shuffle_batch可以随机打乱输入
 test_x_batch, test_y_batch = tf.train.shuffle_batch([x_val, y_val],
                                                     batch_size=test_batch, capacity=test_capacity,
@@ -114,6 +118,7 @@ with tf.Session() as sess:
             # base_lr = adjust_learning_rate_inv(step, base_lr)
             a = sess.run(accuracy, feed_dict={x: train_x, y_label: train_y})
             print('Training Accuracy', step, a)
+
             #    plot_confusion_matrix(correct_prediction,y_label)
             result = sess.run(merged,
                               feed_dict={x: train_x, y_label: train_y})
@@ -126,10 +131,12 @@ with tf.Session() as sess:
         test_x, test_y = sess.run([test_x_batch, test_y_batch])
         b = sess.run(accuracy, feed_dict={x: test_x, y_label: test_y})
         print('Test Accuracy', step,b)
+
     # output_graph_def = tf.graph_until.convert_variables_to_constants(sess, sess.graph_def,
     #                                                                  output_node_names=['output'])
     # with tf.gfile.FastGFile('gesture_cnn.pb', mode = 'wb') as f:
     #     f.write(output_graph_def.SerializeToString())
     constant_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["output"])
-    with tf.gfile.FastGFile('../Model/gesture_cnn.pb', mode='wb') as f:
+
+    with tf.gfile.FastGFile('../Model/gesture_cnn256.pb', mode='wb') as f:
         f.write(constant_graph.SerializeToString())
