@@ -4,15 +4,17 @@ import tensorflow as tf
 import matplotlib as plt
 from sklearn.metrics import confusion_matrix
 import numpy as np
-from Utils.ReadAndDecode_Mic import read_and_decode
+
+from Utils.ReadAndDecode_Mic import read_and_decode_mic
+
 
 from Net.CNN_Init import weight_variable, bias_variable, conv2d, max_pool_2x2
 
 log_path = '/home/dmrf/tensorflow_gesture_data/Log'
 train_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_train_5ms.tfrecords'
 val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_test_5ms.tfrecords'
-x_train, y_train = read_and_decode(train_path)
-x_val, y_val = read_and_decode(val_path)
+x_train, y_train = read_and_decode_mic(train_path)
+x_val, y_val = read_and_decode_mic(val_path)
 
 w = 550
 h = 8
