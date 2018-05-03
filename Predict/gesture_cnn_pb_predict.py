@@ -3,11 +3,11 @@ from __future__ import absolute_import, unicode_literals
 import tensorflow as tf
 import numpy as np
 import os
-from Utils.ReadAndDecode_Mic import read_and_decode
+from Utils.ReadAndDecode_Mic import read_and_decode_mic
 import matplotlib.pyplot as plt
 
 val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_test_5ms.tfrecords'
-x_val, y_val = read_and_decode(val_path)
+x_val, y_val = read_and_decode_mic(val_path)
 
 test_batch = 1
 min_after_dequeue_test = test_batch * 2
@@ -26,14 +26,14 @@ Test_iterations = test_count / test_batch
 
 output_graph_def = tf.GraphDef()
 
-pb_file_path = "../Model/gesture_cnn.pb"
+pb_file_path = "../Model/gesture_cnn256.pb"
 
 with open(pb_file_path, "rb") as f:
     output_graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(output_graph_def, name="")
 
-
 LABELS = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+
 
 def ReadDataFromTxt(path):
     files2 = os.listdir(path)
@@ -47,10 +47,6 @@ def ReadDataFromTxt(path):
         except ValueError:
             return "error"
 
-
-    I = I.reshape(-1, 1)
-    Q = Q.reshape(-1, 1)
-
     data = np.ndarray((1, 8, 550, 2), dtype=np.float64)
     if len(I) != 4400:
         print 'error'
@@ -61,15 +57,11 @@ def ReadDataFromTxt(path):
     I = I.reshape(8, 550)
     Q = Q.reshape(8, 550)
 
-    #plt.plot(I[0],Q[0])
-    #plt.show()
-
-
     for i in range(0, 8):
         for j in range(0, 550):
             data[0][i][j][0] = I[i][j]
             data[0][i][j][1] = Q[i][j]
-   # res={"data":data,"label":files2[0][0]}
+
     return data
 
 
@@ -165,10 +157,8 @@ def singletest_data_ad(path):
 def singletest_data_pc(path):
     files = os.listdir(path)
     l = len(files)
-    l = l
-    pc_re_label = np.ndarray(1301, dtype=np.int64)
-    pc_pr_label_tf = np.ndarray(1301, dtype=np.int64)
-
+    pc_re_label = np.zeros(2 * 1001, dtype=np.int64)
+    pc_pr_label_tf = np.zeros(2 * 1001, dtype=np.int64)
 
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
@@ -181,26 +171,50 @@ def singletest_data_pc(path):
         index = 0
         files.sort()
         for file in files:
+            test_x = ReadDataFromTxt(path + '/' + file)
 
-            type = -1
-
-            test_x=ReadDataFromTxt(path + '/' + file)
-
-            if test_x=="error":
+            if test_x == "error":
                 continue
 
             img_out_softmax = sess.run(out_softmax, feed_dict={input_x: test_x})
 
             prediction_labels = np.argmax(img_out_softmax, axis=1)
-            print "filename:",file," tf_predict_label:", prediction_labels
-            pc_pr_label_tf[index]=prediction_labels
-           # pc_re_label[index]=LABELS.index(file[0])
-         #   index=index+1
-       # np.savetxt('../Data/pc_re_label.txt', pc_re_label)
-        #np.savetxt('../Data/pc_pr_label_tf.txt', pc_pr_label_tf)
+            print "filename:", file, " tf_predict_label:", prediction_labels
+            pc_pr_label_tf[index] = prediction_labels
+            pc_re_label[index] = LABELS.index(file[0])
+            index = index + 1
+            if index == 2200:
+                break
+        np.savetxt('../Data/pc_re_label.txt', pc_re_label)
+        np.savetxt('../Data/pc_pr_label_tf.txt', pc_pr_label_tf)
 
+
+def gg(path):
+    files = os.listdir(path)
+    for file in files:
+        if file[16] == 'A':
+            os.rename(path + "/" + file, path + "/" + file[16:])
+        elif file[16] == 'B':
+            os.rename(path + "/" + file, path + "/" + file[16:])
+        elif file[16] == 'C':
+            os.rename(path + "/" + file, path + "/" + file[16:])
+        elif file[16] == 'I':
+            os.rename(path + "/" + file, path + "/H" + file[17:])
+        elif file[16] == 'J':
+            os.rename(path + "/" + file, path + "/I" + file[17:])
+        elif file[16] == 'F':
+            if file[-2:] == '_2':
+                os.rename(path + "/" + file, path + "/K" + file[17:])
+            else:
+                os.rename(path + "/" + file, path + "/J" + file[17:])
+        elif file[16] == 'G':
+            if file[-2:] == '_2':
+                os.rename(path + "/" + file, path + "/G" + file[17:])
+            else:
+                os.rename(path + "/" + file, path + "/F" + file[17:])
 
 
 if __name__ == '__main__':
-    singletest_data_pc("/home/dmrf/test_gesture/JS")
-    #ReadDataFromTxt("/home/dmrf/下载/demodata/0_push left_1524492872166_1")
+    singletest_data_pc("/home/dmrf/下载/demodata")
+    #gg("/home/dmrf/下载/demodata")
+    # ReadDataFromTxt("/home/dmrf/下载/demodata/lizhenyan_04_27_A_1524795830456_2")
