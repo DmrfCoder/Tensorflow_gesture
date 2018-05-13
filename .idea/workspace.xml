@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34935338-f861-404f-8f42-b11708344195" name="Default" comment="">
-
-      <change beforePath="" afterPath="$PROJECT_DIR$/Model/gesture_cnn256(backups).pb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Utils/Draw.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Demo/openlstmpbdemo.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/Train/Fix_Weight_CNN.py" afterPath="$PROJECT_DIR$/Train/Fix_Weight_CNN.py" />
+      <change beforePath="$PROJECT_DIR$/Data/list_acc.txt" afterPath="$PROJECT_DIR$/Data/list_acc.txt" />
+      <change beforePath="$PROJECT_DIR$/Data/list_acc_bat.txt" afterPath="$PROJECT_DIR$/Data/list_acc_bat.txt" />
+      <change beforePath="$PROJECT_DIR$/Model/gesture_cnn256(backups).pb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py" afterPath="$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py" />
       <change beforePath="$PROJECT_DIR$/Train/gesture_cnn.py" afterPath="$PROJECT_DIR$/Train/gesture_cnn.py" />
       <change beforePath="$PROJECT_DIR$/Train/gesture_lstm_continous.py" afterPath="$PROJECT_DIR$/Train/gesture_lstm_continous.py" />
-      <change beforePath="$PROJECT_DIR$/Utils/ReadAndDecode_Continous.py" afterPath="$PROJECT_DIR$/Utils/ReadAndDecode_Continous.py" />
-      <change beforePath="$PROJECT_DIR$/Utils/ReadAndDecode_Mic.py" afterPath="$PROJECT_DIR$/Utils/ReadAndDecode_Mic.py" />
-      <change beforePath="$PROJECT_DIR$/Utils/WriteAndCode_Continuous.py" afterPath="$PROJECT_DIR$/Utils/WriteAndCode_Continuous.py" />
-
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,59 +19,55 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tensorflow_gesture$Nosetests_in_PutTxtToTfrecords_py.coverage" NAME="Nosetests in PutTxtToTfrecords.py Coverage Results" MODIFIED="1523516904231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$gesture.coverage" NAME="gesture Coverage Results" MODIFIED="1524374026291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/tensorflow_gesture$Nosetests_in_PutTxtToTfrecords_py.coverage" NAME="Nosetests in PutTxtToTfrecords.py Coverage Results" MODIFIED="1523516904231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$Nosetests_for_PutTxtToTfrecords_test_write_to_tfrecords.coverage" NAME="Nosetests for PutTxtToTfrecords.test_write_to_tfrecords Coverage Results" MODIFIED="1523516786974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$gesture_lstm_continous.coverage" NAME="gesture_lstm_continous Coverage Results" MODIFIED="1525168423557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$OpenTfrecords.coverage" NAME="OpenTfrecords Coverage Results" MODIFIED="1523521922196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$WriteAndCode_continuous_gesture.coverage" NAME="WriteAndCode_continuous_gesture Coverage Results" MODIFIED="1524618027816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$ReadCsv.coverage" NAME="ReadCsv Coverage Results" MODIFIED="1524493295512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$errors_impl.coverage" NAME="errors_impl Coverage Results" MODIFIED="1523516036675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/local/lib/python2.7/dist-packages/tensorflow/python/framework" />
-    <SUITE FILE_PATH="coverage/tensorflow_gesture$WriteDataToTfrecords.coverage" NAME="WriteDataToTfrecords Coverage Results" MODIFIED="1523517247056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$Draw.coverage" NAME="Draw Coverage Results" MODIFIED="1525166644807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
+    <SUITE FILE_PATH="coverage/tensorflow_gesture$WriteDataToTfrecords.coverage" NAME="WriteDataToTfrecords Coverage Results" MODIFIED="1523517247056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$OpenTfrecords_Continous.coverage" NAME="OpenTfrecords_Continous Coverage Results" MODIFIED="1524622658826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$TensorboardDemo2.coverage" NAME="TensorboardDemo2 Coverage Results" MODIFIED="1523854436696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$TensorboardDemo.coverage" NAME="TensorboardDemo Coverage Results" MODIFIED="1523853779447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$gesture_cnn_pb_predict.coverage" NAME="gesture_cnn_pb_predict Coverage Results" MODIFIED="1524553534324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/Tensorflow_gesture$gesture_lstm_continous.coverage" NAME="gesture_lstm_continous Coverage Results" MODIFIED="1526222765736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$Fix_Weight_CNN.coverage" NAME="Fix_Weight_CNN Coverage Results" MODIFIED="1525158230637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/Tensorflow_gesture$gesture_cnn.coverage" NAME="gesture_cnn Coverage Results" MODIFIED="1525881122900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$gesture_cnn.coverage" NAME="gesture_cnn Coverage Results" MODIFIED="1525157126837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$gesture_lstm_pb_predict.coverage" NAME="gesture_lstm_pb_predict Coverage Results" MODIFIED="1525169091077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Predict" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$Mnist.coverage" NAME="Mnist Coverage Results" MODIFIED="1523528297633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo" />
+    <SUITE FILE_PATH="coverage/Tensorflow_gesture$Nosetests_in_openlstmpbdemo_py.coverage" NAME="Nosetests in openlstmpbdemo.py Coverage Results" MODIFIED="1526222465049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo" />
+    <SUITE FILE_PATH="coverage/Tensorflow_gesture$gesture_lstm_pb_predict.coverage" NAME="gesture_lstm_pb_predict Coverage Results" MODIFIED="1526222579725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Predict" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$ReadDataFromTfrecords.coverage" NAME="ReadDataFromTfrecords Coverage Results" MODIFIED="1523511434241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo" />
     <SUITE FILE_PATH="coverage/tensorflow_gesture$PlotConfusionMatrix.coverage" NAME="PlotConfusionMatrix Coverage Results" MODIFIED="1524551423249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-
-      <file leaf-file-name="gesture_lstm_pb_predict.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gesture_lstm_pb_predict.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="-187">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="54" />
               <folding>
                 <element signature="e#21#77#0" expanded="true" />
               </folding>
-
             </state>
           </provider>
         </entry>
       </file>
-
-      <file leaf-file-name="gesture_lstm_continous.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gesture_lstm_continous.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Train/gesture_lstm_continous.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3026">
-              <caret line="186" column="50" lean-forward="false" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
-
-              <folding>
-                <element signature="e#24#47#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-
-
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -128,15 +119,16 @@
         <option value="$PROJECT_DIR$/Train/Fix_Weight_CNN.py" />
         <option value="$PROJECT_DIR$/Utils/ReadAndDecode_Continous.py" />
         <option value="$PROJECT_DIR$/Utils/ReadAndDecode_Mic.py" />
-        <option value="$PROJECT_DIR$/Train/gesture_cnn.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Utils/Draw.py" />
-        <option value="$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py" />
-        <option value="$PROJECT_DIR$/Train/gesture_lstm_continous.py" />
         <option value="$PROJECT_DIR$/Data/pr_label.txt" />
-        <option value="$PROJECT_DIR$/Train/gesture_cnn.py" />
         <option value="$PROJECT_DIR$/Train/gesture_lstm.py" />
         <option value="$PROJECT_DIR$/Utils/PlotConfusionMatrix.py" />
+        <option value="$PROJECT_DIR$/Train/gesture_cnn.py" />
+        <option value="$PROJECT_DIR$/Train/gesture_cnn.py" />
+        <option value="$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py" />
+        <option value="$PROJECT_DIR$/Demo/openlstmpbdemo.py" />
+        <option value="$PROJECT_DIR$/Train/gesture_lstm_continous.py" />
       </list>
     </option>
   </component>
@@ -146,11 +138,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="730" />
-    <option name="y" value="45" />
-    <option name="width" value="673" />
-    <option name="height" value="667" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="507" />
+    <option name="y" value="-6" />
+    <option name="width" value="671" />
+    <option name="height" value="661" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -171,56 +163,39 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Tensorflow_gesture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tensorflow_gesture" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-
-              <item name="tensorflow_gesture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tensorflow_gesture" type="462c0819:PsiDirectoryNode" />
-
+              <item name="Tensorflow_gesture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tensorflow_gesture" type="462c0819:PsiDirectoryNode" />
+              <item name="Demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tensorflow_gesture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tensorflow_gesture" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Predict" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Solver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Tensorflow_gesture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tensorflow_gesture" type="462c0819:PsiDirectoryNode" />
               <item name="Train" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tensorflow_gesture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tensorflow_gesture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/GestureRecogonize" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -246,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gesture_lstm_pb_predict">
+  <component name="RunManager" selected="Python.gesture_lstm_continous">
     <configuration name="Draw" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -261,25 +236,6 @@
       <module name="tensorflow_gesture" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/Draw.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Fix_Weight_CNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Train" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tensorflow_gesture" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Train/Fix_Weight_CNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -342,20 +298,36 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Nosetests in openlstmpbdemo.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tensorflow_gesture" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Demo/openlstmpbdemo.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.gesture_cnn" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Fix_Weight_CNN" />
-      <item index="2" class="java.lang.String" itemvalue="Python.gesture_lstm_continous" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Draw" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gesture_lstm_pb_predict" />
+      <item index="1" class="java.lang.String" itemvalue="Python.gesture_lstm_continous" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Draw" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gesture_lstm_pb_predict" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in openlstmpbdemo.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.gesture_lstm_pb_predict" />
-        <item index="1" class="java.lang.String" itemvalue="Python.gesture_lstm_continous" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Draw" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Fix_Weight_CNN" />
-        <item index="4" class="java.lang.String" itemvalue="Python.gesture_cnn" />
+        <item index="0" class="java.lang.String" itemvalue="Python.gesture_lstm_continous" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gesture_lstm_pb_predict" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in openlstmpbdemo.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python.gesture_cnn" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Draw" />
       </list>
     </recent_temporary>
   </component>
@@ -376,15 +348,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_for_PutTxtToTfrecords_test_write_to_tfrecords - 2018.04.12 at 15h 02m 34s.xml">
-      <configuration name="Nosetests for PutTxtToTfrecords.test_write_to_tfrecords" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_for_PutTxtToTfrecords_test_write_to_tfrecords - 2018.04.12 at 15h 03m 04s.xml">
-      <configuration name="Nosetests for PutTxtToTfrecords.test_write_to_tfrecords" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_for_PutTxtToTfrecords_test_write_to_tfrecords - 2018.04.12 at 15h 03m 20s.xml">
-      <configuration name="Nosetests for PutTxtToTfrecords.test_write_to_tfrecords" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_for_PutTxtToTfrecords_test_write_to_tfrecords - 2018.04.12 at 15h 03m 57s.xml">
       <configuration name="Nosetests for PutTxtToTfrecords.test_write_to_tfrecords" configurationId="tests" />
     </history-entry>
@@ -403,44 +366,35 @@
     <history-entry file="Nosetests_in_PutTxtToTfrecords_py - 2018.04.12 at 15h 08m 28s.xml">
       <configuration name="Nosetests in PutTxtToTfrecords.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_in_openlstmpbdemo_py - 2018.05.13 at 22h 36m 11s.xml">
+      <configuration name="Nosetests in openlstmpbdemo.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_openlstmpbdemo_py - 2018.05.13 at 22h 37m 38s.xml">
+      <configuration name="Nosetests in openlstmpbdemo.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_openlstmpbdemo_py - 2018.05.13 at 22h 39m 57s.xml">
+      <configuration name="Nosetests in openlstmpbdemo.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_openlstmpbdemo_py - 2018.05.13 at 22h 41m 12s.xml">
+      <configuration name="Nosetests in openlstmpbdemo.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-
-    <frame x="730" y="45" width="1368" height="780" extended-state="7" />
-
+    <frame x="507" y="-6" width="1368" height="780" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1773585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30988786" sideWeight="0.5030166" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25891948" sideWeight="0.4969834" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5798722" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23853211" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30990416" sideWeight="0.5030166" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6118211" sideWeight="0.4969834" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5798722" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15233786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.528754" sideWeight="0.4969834" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33546326" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29185522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5075415" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17092651" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.031948883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -448,7 +402,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,13 +420,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="61" />
+          <line>71</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -483,29 +431,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="62" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-
-    <entry file="file://$PROJECT_DIR$/Demo/ReadDataFromTfrecordsDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/PutTxtToTfrecords.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/framework/op_def_library.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/nn_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24463">
-          <caret line="1458" column="15" lean-forward="false" selection-start-line="1458" selection-start-column="15" selection-end-line="1458" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils/WriteDataToTfrecords.py" />
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/training/gradient_descent.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -559,7 +489,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/confusion_matrix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -567,7 +496,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/Demo/DecodepbDemo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -625,13 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/re_label.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21715">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/re_label.txt" />
     <entry file="file://$PROJECT_DIR$/Data/pc_pr_label_tf.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -653,7 +575,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1247972723/numpy/core/multiarray.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -661,7 +582,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/Utils/OpenTfrecords_Mic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -671,7 +591,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Train/gesture_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="17">
           <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
         </state>
@@ -688,13 +607,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/ReadAndDecode_Continous.py">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="85">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
@@ -705,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-
         </state>
       </provider>
     </entry>
@@ -718,16 +634,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/list_acc_bat_test.txt">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/list_acc_test.txt">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -765,25 +678,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="57" />
-
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo/lstm_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-
-        <state relative-caret-position="-1050">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Train/gesture_cnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo/lstm_demo.py" />
     <entry file="file://$PROJECT_DIR$/Model/gesture_lstm.pb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -795,29 +693,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="77" column="47" lean-forward="false" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo/ReadDataFromTfrecordsDemo.py">
+    <entry file="file://$PROJECT_DIR$/Demo/ReadDataFromTfrecordsDemo.py" />
+    <entry file="file://$PROJECT_DIR$/Model/gesture_cnn256.pb">
       <provider selected="true" editor-type-id="text-editor">
-
-        <state relative-caret-position="3026">
-          <caret line="186" column="50" lean-forward="false" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
-
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/gesture_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="113" column="5" lean-forward="false" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/framework/importer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="153" column="4" lean-forward="false" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/gesture_cnn_cyw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/gesture_cnn256addlstm.pb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo/openlstmpbdemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Predict/gesture_lstm_pb_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="-187">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="54" />
           <folding>
             <element signature="e#21#77#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/gesture_lstm_continous.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

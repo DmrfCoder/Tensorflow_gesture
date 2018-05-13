@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 from Utils.ReadAndDecode_Continous import read_and_decode_continous
 
-val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/test_continous.tfrecords'
+val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'
 x_val, y_val = read_and_decode_continous(val_path)
 
 test_batch = 1
@@ -28,16 +28,16 @@ Test_iterations = test_count / test_batch
 
 output_graph_def = tf.GraphDef()
 
-pb_file_path = "../Model/gesture_cnn256.pb"
+pb_file_path = "../Model/gesture_cnn256addlstm.pb"
 pb_lstm_file_path = "../Model/gesture_lstm.pb"
 
 with open(pb_file_path, "rb") as f:
     output_graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(output_graph_def, name="")
-
-with open(pb_lstm_file_path, "rb") as f:
-    output_graph_def.ParseFromString(f.read())
-    _ = tf.import_graph_def(output_graph_def, name="")
+#
+# with open(pb_lstm_file_path, "rb") as f:
+#     output_graph_def.ParseFromString(f.read())
+#     _ = tf.import_graph_def(output_graph_def, name="")
 
 LABELS = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
 

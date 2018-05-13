@@ -10,8 +10,8 @@ import numpy as np
 # val_path = '/home/wjyyy/Tensorflow/Data/mic_test_5ms.tfrecords'
 from Utils.ReadAndDecode_Continous import read_and_decode_continous
 
-train_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/train_continous.tfrecords'
-val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/test_continous.tfrecords'
+train_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/train_continous.tfrecords'
+val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/test_continous.tfrecords'
 
 pb_file_path = "../Model/gesture_cnn256.pb"
 
@@ -49,7 +49,7 @@ biases = {
     'out': tf.Variable(tf.constant(0.1, shape=[n_classes, ]))
 }
 
-batch_size = 64
+batch_size = 1
 
 
 def RNN(x, weights, biases):
@@ -101,7 +101,7 @@ num_threads = 3
 train_capacity = min_after_dequeue_train + num_threads * train_batch
 test_capacity = min_after_dequeue_test + num_threads * test_batch
 
-Training_iterations = 1000
+Training_iterations = 10000
 Validation_size = batch_size * 2
 
 test_count = n_classes * 100

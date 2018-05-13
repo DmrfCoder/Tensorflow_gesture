@@ -11,8 +11,8 @@ from Utils.ReadAndDecode_Mic import read_and_decode_mic
 from Net.CNN_Init import weight_variable, bias_variable, conv2d, max_pool_2x2
 
 log_path = '/home/dmrf/tensorflow_gesture_data/Log'
-train_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_train_5ms.tfrecords'
-val_path = '/home/dmrf/tensorflow_gesture_data/Gesture_data/mic_test_5ms.tfrecords'
+train_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/mic_train_5ms.tfrecords'
+val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/mic_test_5ms.tfrecords'
 x_train, y_train = read_and_decode_mic(train_path)
 x_val, y_val = read_and_decode_mic(val_path)
 
@@ -24,10 +24,11 @@ labels_type = 13
 # 占位符
 
 # [batch, in_height, in_width, in_channels]
-x = tf.placeholder(tf.float32, shape=[None, h, w, c], name='input')
+x = tf.placeholder(tf.float32, shape=[None,h, w, c], name='input')
 y_label = tf.placeholder(tf.int64, shape=[None, ])
 
 def add_net(in_x):
+
     # [filter_height, filter_width, in_channels, out_channels]
     w_conv1 = weight_variable([1, 7, 2, 16])
     b_conv1 = bias_variable([16])
@@ -79,7 +80,7 @@ correct_prediction = tf.equal(tf.argmax(y, 1), y_label)
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 # 组合batch
-train_batch = 64
+train_batch = 1
 test_batch = 32
 
 min_after_dequeue_train = train_batch * 2
@@ -90,7 +91,7 @@ num_threads = 3 #开启3个线程
 train_capacity = min_after_dequeue_train + num_threads * train_batch
 test_capacity = min_after_dequeue_test + num_threads * test_batch
 
-Training_iterations = 4500 #训练迭代次数
+Training_iterations = 100 #训练迭代次数
 Validation_size = 100   #每隔100次在屏幕上打印一次
 test_count = labels_type * 100 #测试样本总数
 Test_iterations = test_count / test_batch #测试迭代次数
@@ -113,6 +114,7 @@ with tf.Session() as sess:
     threads = tf.train.start_queue_runners(sess=sess)
     for step in range(Training_iterations + 1):
         train_x, train_y = sess.run([train_x_batch, train_y_batch])
+        train_x=np.reshape(train_x,(1,h,w,c))
 
         sess.run(train, feed_dict={x: train_x, y_label: train_y})
         # Train accuracy
@@ -129,10 +131,10 @@ with tf.Session() as sess:
             # with tf.gfile.FastGFile('gesture_cnn.pb', mode='wb') as f:
             #     f.write(constant_graph.SerializeToString())
 
-    for step in range(Test_iterations + 1):
-        test_x, test_y = sess.run([test_x_batch, test_y_batch])
-        b = sess.run(accuracy, feed_dict={x: test_x, y_label: test_y})
-        print('Test Accuracy', step,b)
+    # for step in range(Test_iterations + 1):
+    #     test_x, test_y = sess.run([test_x_batch, test_y_batch])
+    #     b = sess.run(accuracy, feed_dict={x: test_x, y_label: test_y})
+    #     print('Test Accuracy', step,b)
 
     # output_graph_def = tf.graph_until.convert_variables_to_constants(sess, sess.graph_def,
     #                                                                  output_node_names=['output'])
