@@ -184,6 +184,6 @@ with tf.Session() as sess:
     np.savetxt('../Data/list_acc_bat.txt',list_acc_bat)
 
     constant_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["output_lstm"])
-    with tf.gfile.FastGFile('../Model/gesture_lstm.pb', mode='wb') as f:
+    with tf.gfile.FastGFile('../Model/gesture_cnn256addlstm.pb', mode='ab') as f:
         f.write(constant_graph.SerializeToString())
 

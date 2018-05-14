@@ -4,10 +4,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # load labels.
-labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+#labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
+label= [0, 1, 2, 3, 4, 5, 6, 7]
 
-y_true = np.loadtxt('../Data/re_label.txt')
-y_pred = np.loadtxt('../Data/pr_label.txt')
+#y_true = np.loadtxt('../Data/pc_re_label.txt')
+#y_pred = np.loadtxt('../Data/pc_pr_label_tf.txt')
+y_true = np.loadtxt('../Data/re_label_lstm.txt')
+y_pred = np.loadtxt('../Data/pr_label_lstm.txt')
+
+
+
+
 
 
 tick_marks = np.array(range(len(labels))) + 0.5
@@ -28,8 +36,7 @@ cm = confusion_matrix(y_true, y_pred)
 np.set_printoptions(precision=2)
 cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
 print cm_normalized
-plt.figure(figsize=(12, 8), dpi=120)
-
+plt.figure(figsize=(9, 8), dpi=120)
 # set the fontsize of label.
 # for label in plt.gca().xaxis.get_ticklabels():
 #    label.set_fontsize(8)

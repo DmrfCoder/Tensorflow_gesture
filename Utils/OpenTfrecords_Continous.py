@@ -6,7 +6,7 @@ import numpy as np
 
 reader = tf.TFRecordReader()
 filename_queue = tf.train.string_input_producer(
-    ["/home/dmrf/tensorflow_gesture_data/Gesture_data/test.tfrecords"])
+    ['/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'])
 _, serialized_example = reader.read(filename_queue)
 
 # 解析读取的样例。
@@ -32,8 +32,13 @@ sess = tf.Session()
 coord = tf.train.Coordinator()
 threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
-for i in range(100):
+for i in range(1000):
     image, label = sess.run([images, labels])
+    if label<0:
+        print('error')
+    if label>7:
+        print('error')
+
 
     print image[1][1100][0],label
     #print label, image

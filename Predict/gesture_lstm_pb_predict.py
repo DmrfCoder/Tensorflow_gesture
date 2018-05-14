@@ -40,11 +40,11 @@ with open(pb_file_path, "rb") as f:
 #     _ = tf.import_graph_def(output_graph_def, name="")
 
 LABELS = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
-
+label= [0, 1, 2, 3, 4, 5, 6, 7]
 
 def batchtest():
-    re_label = np.ndarray(1000, dtype=np.int64)
-    pr_label = np.ndarray(1000, dtype=np.int64)
+    re_label = np.ndarray(801, dtype=np.int64)
+    pr_label = np.ndarray(801, dtype=np.int64)
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
 
@@ -94,7 +94,11 @@ def batchtest():
             out_softmax = sess.run(softmax_lstm, feed_dict={input_x_lstm: x_ndarry_lstm})
             print(str(step_test))
             print "real_label:", test_y
+
+
+
             re_label[step_test] = test_y
+
             prediction_labels = np.argmax(out_softmax, axis=1)
             pr_label[step_test] = prediction_labels
             print "predict_label:", prediction_labels
@@ -105,7 +109,7 @@ def batchtest():
 
 
     np.savetxt('../Data/re_label_lstm.txt', re_label)
-    np.savetxt('../Data/pr_label.txt_lstm', pr_label)
+    np.savetxt('../Data/pr_label_lstm.txt', pr_label)
 
 
 
