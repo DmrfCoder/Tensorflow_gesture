@@ -16,6 +16,11 @@
 ![这里写图片描述](https://img-blog.csdn.net/20180501230141795?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTgyMTYw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ### Confustion Matrix
 ![这里写图片描述](https://img-blog.csdn.net/20180514093234491?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTgyMTYw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+对应的error_count（train）可视化结果：
+
+![这里写图片描述](https://img-blog.csdn.net/20180514224436319?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTgyMTYw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 其中B手势和I手势的识别结果和预期出现了比较大的偏差，初步估计是label的问题，待修复。
 ## tensorflow->android demo需求说明
 输入数据维度为2x8x550，pb文件是已有的，输出预测得到的label值。
