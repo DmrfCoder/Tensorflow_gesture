@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 
 from Utils.ReadAndDecode_Continous import read_and_decode_continous
 
-val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'
+#val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'
+val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/train_continous.tfrecords'
 x_val, y_val = read_and_decode_continous(val_path)
 
 test_batch = 1
@@ -23,28 +24,28 @@ test_x_batch, test_y_batch = tf.train.shuffle_batch([x_val, y_val],
                                                     min_after_dequeue=min_after_dequeue_test)
 
 labels_type = 8
-test_count = labels_type * 100
+test_count = labels_type * 1000
 Test_iterations = test_count / test_batch
 
 output_graph_def = tf.GraphDef()
 
-pb_file_path = "../Model/gesture_cnn256addlstm.pb"
+pb_file_path = "../Model/gesture_cnn256.pb"
 pb_lstm_file_path = "../Model/gesture_lstm.pb"
 
 with open(pb_file_path, "rb") as f:
     output_graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(output_graph_def, name="")
-#
-# with open(pb_lstm_file_path, "rb") as f:
-#     output_graph_def.ParseFromString(f.read())
-#     _ = tf.import_graph_def(output_graph_def, name="")
+
+with open(pb_lstm_file_path, "rb") as f:
+    output_graph_def.ParseFromString(f.read())
+    _ = tf.import_graph_def(output_graph_def, name="")
 
 LABELS = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
 label= [0, 1, 2, 3, 4, 5, 6, 7]
 
 def batchtest():
-    re_label = np.ndarray(801, dtype=np.int64)
-    pr_label = np.ndarray(801, dtype=np.int64)
+    re_label = np.ndarray(8003, dtype=np.int64)
+    pr_label = np.ndarray(8003, dtype=np.int64)
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
 
@@ -98,6 +99,8 @@ def batchtest():
 
 
             re_label[step_test] = test_y
+            if test_y==1:
+                print(test_y)
 
             prediction_labels = np.argmax(out_softmax, axis=1)
             pr_label[step_test] = prediction_labels
@@ -108,8 +111,8 @@ def batchtest():
 
 
 
-    np.savetxt('../Data/re_label_lstm.txt', re_label)
-    np.savetxt('../Data/pr_label_lstm.txt', pr_label)
+    np.savetxt('../Data/re_label_lstmtrain.txt', re_label)
+    np.savetxt('../Data/pr_label_lstmtrain.txt', pr_label)
 
 
 

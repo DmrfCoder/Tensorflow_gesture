@@ -101,7 +101,7 @@ num_threads = 3
 train_capacity = min_after_dequeue_train + num_threads * train_batch
 test_capacity = min_after_dequeue_test + num_threads * test_batch
 
-Training_iterations = 10000
+Training_iterations = 8000
 Validation_size = batch_size * 2
 
 test_count = n_classes * 100
@@ -125,9 +125,9 @@ list_acc_test=np.zeros(shape=(int(Test_iterations/batch_size)+1),dtype=np.float3
 list_acc_bat_test=np.zeros(shape=(int(Test_iterations/batch_size)+1),dtype=np.int)
 
 
-re_label = np.ndarray(1000, dtype=np.int64)
-pr_label = np.ndarray(1000, dtype=np.int64)
-
+re_label = np.ndarray(8008, dtype=np.int64)
+pr_label = np.ndarray(8008, dtype=np.int64)
+error_index=[]
 # Train
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
@@ -155,35 +155,41 @@ with tf.Session() as sess:
             x_ndarry_lstm[:, 0:256] = sess.run(fc, feed_dict={input_x: train_x[:, :, 0:550]})
             x_ndarry_lstm[:, 256:512] = sess.run(fc, feed_dict={input_x: train_x[:, :, 550:1100]})
 
-            # x_narray_cnn[0][:] = train_x[:][:][0:550]
-            # x_narray_cnn[1][:] = train_x[:][:][550:1100]
 
         else:  # 2s-->need train_x[:][1][0:2200][0]
             x_ndarry_lstm[:, 0:256] = sess.run(fc, feed_dict={input_x: train_x[:, :, 0:550]})
             x_ndarry_lstm[:, 256:512] = sess.run(fc, feed_dict={input_x: train_x[:, :, 550:1100]})
             x_ndarry_lstm[:, 512:768] = sess.run(fc, feed_dict={input_x: train_x[:, :, 1100:1650]})
             x_ndarry_lstm[:, 768:1024] = sess.run(fc, feed_dict={input_x: train_x[:, :, 1650:2200]})
-            # x_narray_cnn[0][:] = train_x[:][:][0:550]
-            # x_narray_cnn[1][:] = train_x[:][:][550:1100]
-            # x_narray_cnn[2][:] = train_x[:][:][1100:1650]
-            # x_narray_cnn[3][:] = train_x[:][:][1650:2200]
+
 
         # print 0
 
-        sess.run(train, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
+        a=sess.run(train, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
+
+
         # Train accuracy
         if step % Validation_size == 0:
             # base_lr = adjust_learning_rate_inv(step, base_lr)
             a = sess.run(accuracy, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
-            print('Training Accuracy', step, a
-                  )
-            list_acc[int(step/Validation_size)]=a
-            list_acc_bat[int(step/Validation_size)]=step
+            if batch_size==1:
+                if a!=1:
+                    error_index.append(train_y[0])
+                print('Training Accuracy', step, a,train_y[0]
+                      )
+            else:
+                print('Training Accuracy', step, a
+                      )
 
-    np.savetxt('../Data/list_acc.txt',list_acc)
-    np.savetxt('../Data/list_acc_bat.txt',list_acc_bat)
+    l=len(error_index)
+    error_numpy=np.zeros((l),dtype=np.int64)
+    for i in range(0,l):
+        error_numpy[i]=error_index[i]
+    np.savetxt('../Data/error_index.txt', error_numpy)
+    # np.savetxt('../Data/train_re_balel_lstm.txt',re_label)
+    # np.savetxt('../Data/train_pr_balel_lstm.txt',pr_label)
 
     constant_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["output_lstm"])
-    with tf.gfile.FastGFile('../Model/gesture_cnn256addlstm.pb', mode='ab') as f:
+    with tf.gfile.FastGFile('../Model/gesture_lstm.pb', mode='wb') as f:
         f.write(constant_graph.SerializeToString())
 
