@@ -84,6 +84,21 @@ def write_to_tfrecords(filename, data_dir):
             index = int(7)
             num_flag = 1
 
+        # if type == 'A':
+        #     index = int(0)
+        #     num_flag = 1
+        # elif type == 'B':
+        #     index = int(1)
+        #     num_flag = 1
+        # elif type == 'I':
+        #     index = int(2)
+        #     num_flag = 1
+        # elif type == 'J':
+        #     index = int(3)
+        #     num_flag = 1
+        # else:
+        #     continue
+
         if index == -1:
             print('label not found exception')
             continue
@@ -124,6 +139,6 @@ def write_to_tfrecords(filename, data_dir):
 
 
 if __name__ == '__main__':
-    tfrecords_filename = "/home/dmrf/tensorflow_gesture_data/Gesture_data/train.tfrecords"
-    data_dir = '/home/dmrf/文档/Gesture/New_Data/持续时间为1s的复杂手势/连续手势集/Train'
+    tfrecords_filename = "/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/abij_test.tfrecords"
+    data_dir = '/home/dmrf/文档/Gesture/New_Data/持续时间为1s的复杂手势/连续手势集/Test'
     write_to_tfrecords(tfrecords_filename, data_dir)

@@ -8,7 +8,7 @@ ds3 = tablib.Dataset()
 ds3.headers = ['name', 'error_count']
 labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
 
-error_numpy = np.loadtxt('../Data/error_index.txt')
+error_numpy = np.loadtxt('../Data/abij_error_index.txt')
 g = np.zeros((8), dtype=np.int64)
 
 for a in error_numpy:
@@ -20,4 +20,4 @@ for i in range(0, 8):
 
 bar3 = Bar('error_count')
 bar3.add('error_count', ds3.get_col(0), ds3.get_col(1))
-bar3.render('../Data/error_bar.html')
+bar3.render('../Data/abij_error_bar.html')

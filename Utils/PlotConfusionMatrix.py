@@ -5,16 +5,18 @@ import numpy as np
 
 # load labels.
 #labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
-labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
+labels = ['A', 'B', 'C', 'F', 'G', 'H', 'I','J']
+#labels = ['A', 'B', 'I', 'J']
 label= [0, 1, 2, 3, 4, 5, 6, 7]
 
 #y_true = np.loadtxt('../Data/pc_re_label.txt')
 #y_pred = np.loadtxt('../Data/pc_pr_label_tf.txt')
-y_true = np.loadtxt('../Data/re_label_lstmtrain.txt')
-y_pred = np.loadtxt('../Data/pr_label_lstmtrain.txt')
+a = np.loadtxt('../Data/re_label_lstmtrain_addlstm_one.txt')
+b = np.loadtxt('../Data/pr_label_lstmtrain_addlstm_one.txt')
 
 
-
+y_true=a
+y_pred=b
 
 
 
@@ -58,5 +60,5 @@ plt.gcf().subplots_adjust(bottom=0.15)
 
 plot_confusion_matrix(cm_normalized, title='Normalized confusion matrix')
 # show confusion matrix
-plt.savefig('../Data/confusion_matrix_lstm_train.png', format='png')
+plt.savefig('../Data/confusion_matrix_lstm_train_addlstm_abij.png', format='png')
 plt.show()

@@ -48,8 +48,15 @@ def draw_mj():
             print(str(i)+':'+str(b[i]/a[i]))
 
 
-
+def draw_iq():
+    i=np.loadtxt('/home/dmrf/文档/Gesture/New_Data/持续时间为1s的复杂手势/连续手势集/Train/B_3124428/B_I_3124428.txt')
+    q=np.loadtxt('/home/dmrf/文档/Gesture/New_Data/持续时间为1s的复杂手势/连续手势集/Train/B_3124428/B_Q_3124428.txt')
+    i=i.reshape(-1)
+    q=q.reshape(-1)
+    plt.plot(i,q)
+    plt.show()
 
 if __name__=='__main__':
    # Draw()
-    draw_mj()
+    #draw_mj()
+    draw_iq()

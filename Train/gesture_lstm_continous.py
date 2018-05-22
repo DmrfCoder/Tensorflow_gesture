@@ -10,8 +10,8 @@ import numpy as np
 # val_path = '/home/wjyyy/Tensorflow/Data/mic_test_5ms.tfrecords'
 from Utils.ReadAndDecode_Continous import read_and_decode_continous
 
-train_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/train_continous.tfrecords'
-val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/test_continous.tfrecords'
+train_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/train_continous.tfrecords'
+val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'
 
 pb_file_path = "../Model/gesture_cnn256.pb"
 
@@ -28,15 +28,15 @@ n_steps = 4  # time steps
 n_inputs = 256
 n_classes = 8
 n_hidden_units = 256  # neurons in hidden layer
-n_layer_num = 2
+n_layer_num = 1
 
 # 占位符
 # RNN 的输入shape = (batch_size, timestep_size, input_size)
-x_lstm = tf.placeholder(tf.float32, shape=[None, n_steps * n_inputs],name='input_lstm')  # 4*256 vector
+x_lstm = tf.placeholder(tf.float32, shape=[None, n_steps * n_inputs], name='input_lstm')  # 4*256 vector
 y_label = tf.placeholder(tf.int64, shape=[None, ])
 keep_prob = tf.placeholder(tf.float32)
 
-initializer=tf.contrib.layers.xavier_initializer()
+initializer = tf.contrib.layers.xavier_initializer()
 weights = {
 
     'in': tf.Variable(initializer([n_inputs, n_hidden_units])),
@@ -76,8 +76,8 @@ def RNN(x, weights, biases):
 
 # Loss
 logist = RNN(x_lstm, weights, biases)
-logist = tf.nn.softmax(logist,name='softmax_lstm')
-prediction_labels = tf.argmax(logist, axis=1,name='output_lstm')
+logist = tf.nn.softmax(logist, name='softmax_lstm')
+prediction_labels = tf.argmax(logist, axis=1, name='output_lstm')
 
 base_lr = 0.5
 
@@ -101,7 +101,7 @@ num_threads = 3
 train_capacity = min_after_dequeue_train + num_threads * train_batch
 test_capacity = min_after_dequeue_test + num_threads * test_batch
 
-Training_iterations = 8000
+Training_iterations = 4000
 Validation_size = batch_size * 2
 
 test_count = n_classes * 100
@@ -117,27 +117,27 @@ test_x_batch, test_y_batch = tf.train.shuffle_batch([x_val, y_val],
                                                     batch_size=test_batch, capacity=test_capacity,
                                                     min_after_dequeue=min_after_dequeue_test)
 
+list_acc = np.zeros(shape=(int(Training_iterations / batch_size) + 1), dtype=np.float32)
+list_acc_bat = np.zeros(shape=(int(Training_iterations / batch_size) + 1), dtype=np.int)
 
-list_acc=np.zeros(shape=(int(Training_iterations/batch_size)+1),dtype=np.float32)
-list_acc_bat=np.zeros(shape=(int(Training_iterations/batch_size)+1),dtype=np.int)
-
-list_acc_test=np.zeros(shape=(int(Test_iterations/batch_size)+1),dtype=np.float32)
-list_acc_bat_test=np.zeros(shape=(int(Test_iterations/batch_size)+1),dtype=np.int)
-
+list_acc_test = np.zeros(shape=(int(Test_iterations / batch_size) + 1), dtype=np.float32)
+list_acc_bat_test = np.zeros(shape=(int(Test_iterations / batch_size) + 1), dtype=np.int)
 
 re_label = np.ndarray(8008, dtype=np.int64)
 pr_label = np.ndarray(8008, dtype=np.int64)
-error_index=[]
+error_index = []
 # Train
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     threads = tf.train.start_queue_runners(sess=sess)
     input_x = sess.graph.get_tensor_by_name("input:0")
     print input_x
-    out_softmax = sess.graph.get_tensor_by_name("softmax:0")
-    print out_softmax
+    # out_softmax = sess.graph.get_tensor_by_name("softmax:0")
+    # print out_softmax
     fc = sess.graph.get_tensor_by_name("fullconnection1:0")
     print fc
+    output_cnn = sess.graph.get_tensor_by_name("output:0")
+    print output_cnn
 
     for step in range(Training_iterations + 1):
         train_x, train_y = sess.run([train_x_batch, train_y_batch])
@@ -163,33 +163,19 @@ with tf.Session() as sess:
             x_ndarry_lstm[:, 768:1024] = sess.run(fc, feed_dict={input_x: train_x[:, :, 1650:2200]})
 
 
-        # print 0
 
-        a=sess.run(train, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
+        a = sess.run(train, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
+        print('Training Accuracy', step, a
+              )
 
-
-        # Train accuracy
-        if step % Validation_size == 0:
-            # base_lr = adjust_learning_rate_inv(step, base_lr)
-            a = sess.run(accuracy, feed_dict={x_lstm: x_ndarry_lstm, y_label: train_y})
-            if batch_size==1:
-                if a!=1:
-                    error_index.append(train_y[0])
-                print('Training Accuracy', step, a,train_y[0]
-                      )
-            else:
-                print('Training Accuracy', step, a
-                      )
-
-    l=len(error_index)
-    error_numpy=np.zeros((l),dtype=np.int64)
-    for i in range(0,l):
-        error_numpy[i]=error_index[i]
-    np.savetxt('../Data/error_index.txt', error_numpy)
+    l = len(error_index)
+    error_numpy = np.zeros((l), dtype=np.int64)
+    for i in range(0, l):
+        error_numpy[i] = error_index[i]
+    np.savetxt('../Data/abij_error_index.txt', error_numpy)
     # np.savetxt('../Data/train_re_balel_lstm.txt',re_label)
     # np.savetxt('../Data/train_pr_balel_lstm.txt',pr_label)
 
     constant_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["output_lstm"])
-    with tf.gfile.FastGFile('../Model/gesture_lstm.pb', mode='wb') as f:
+    with tf.gfile.FastGFile('../Model/gesture_cnn_lstm.pb', mode='ab') as f:
         f.write(constant_graph.SerializeToString())
-
