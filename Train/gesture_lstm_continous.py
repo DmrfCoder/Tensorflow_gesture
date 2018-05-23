@@ -26,7 +26,7 @@ x_val, y_val = read_and_decode_continous(val_path)
 
 n_steps = 4  # time steps
 n_inputs = 256
-n_classes = 8
+n_classes = 6
 n_hidden_units = 256  # neurons in hidden layer
 n_layer_num = 1
 
@@ -141,6 +141,10 @@ with tf.Session() as sess:
 
     for step in range(Training_iterations + 1):
         train_x, train_y = sess.run([train_x_batch, train_y_batch])
+        if train_y==6:
+            continue
+        if train_y==7:
+            continue
 
         x_ndarry_lstm = np.zeros(shape=(batch_size, 1024), dtype=np.float32)  # 定义一个长度为1024的array
 
@@ -177,5 +181,5 @@ with tf.Session() as sess:
     # np.savetxt('../Data/train_pr_balel_lstm.txt',pr_label)
 
     constant_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["output_lstm"])
-    with tf.gfile.FastGFile('../Model/gesture_cnn_lstm.pb', mode='ab') as f:
+    with tf.gfile.FastGFile('../Model/gesture_cnn_lstm6.pb', mode='ab') as f:
         f.write(constant_graph.SerializeToString())

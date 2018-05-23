@@ -25,13 +25,13 @@ test_x_batch, test_y_batch = tf.train.shuffle_batch([x_val, y_val],
                                                     batch_size=test_batch, capacity=test_capacity,
                                                     min_after_dequeue=min_after_dequeue_test)
 
-labels_type = 8
+labels_type = 6
 test_count = labels_type * 100
 Test_iterations = test_count / test_batch
 
 output_graph_def = tf.GraphDef()
 
-pb_file_path = "../Model/gesture_cnn_lstm.pb"
+pb_file_path = "../Model/gesture_cnn_lstm6.pb"
 pb_lstm_file_path = "../Model/gesture_lstm.pb"
 
 with open(pb_file_path, "rb") as f:
@@ -44,12 +44,12 @@ with open(pb_file_path, "rb") as f:
 
 # LABELS = ['A', 'B', 'C', 'F', 'G', 'H', 'I', 'J']
 # LABELS = ['A', 'B',  'I', 'J']
-label = [0, 1, 2, 3, 4, 5, 6, 7]
+label = [0, 1, 2, 3, 4, 5]
 
 
 def batchtest():
-    re_label = np.ndarray(803, dtype=np.int64)
-    pr_label = np.ndarray(803, dtype=np.int64)
+    re_label = np.zeros(603, dtype=np.int64)
+    pr_label = np.zeros(603, dtype=np.int64)
     ind=0
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
@@ -75,6 +75,10 @@ def batchtest():
 
         for step_test in range(Test_iterations + 1):
             test_x, test_y = sess.run([test_x_batch, test_y_batch])
+            if test_y == 6:
+                continue
+            if test_y == 7:
+                continue
 
             x_ndarry_lstm = np.zeros(shape=(test_batch, 1024), dtype=np.float32)  # 定义一个长度为1024的array
             # if test_y==1:
@@ -121,8 +125,8 @@ def batchtest():
             print "predict_label:", prediction_labels
             print('')
 
-    np.savetxt('../Data/re_label_lstmtrain_addlstm.txt', re_label)
-    np.savetxt('../Data/pr_label_lstmtrain_addlstm.txt', pr_label)
+    np.savetxt('../Data/re_label_lstmtrain_addlstm6.txt', re_label)
+    np.savetxt('../Data/pr_label_lstmtrain_addlstm6.txt', pr_label)
 
 
 if __name__ == '__main__':
