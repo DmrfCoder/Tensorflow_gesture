@@ -10,7 +10,7 @@ from Utils.ReadAndDecode_Continous import read_and_decode_continous
 
 val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/test_continous.tfrecords'
 # val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/continous_data/train_continous.tfrecords'
-#val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/abij_test.tfrecords'
+# val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/abij_test.tfrecords'
 # val_path = '/home/dmrf/GestureNuaaTeam/tensorflow_gesture_data/Gesture_data/abij_train.tfrecords'
 x_val, y_val = read_and_decode_continous(val_path)
 
@@ -50,7 +50,7 @@ label = [0, 1, 2, 3, 4, 5]
 def batchtest():
     re_label = np.zeros(603, dtype=np.int64)
     pr_label = np.zeros(603, dtype=np.int64)
-    ind=0
+    ind = 0
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
 
@@ -58,20 +58,20 @@ def batchtest():
         threads = tf.train.start_queue_runners(sess=sess)
 
         input_x = sess.graph.get_tensor_by_name("input:0")
-        print input_x
+        print(input_x)
         fc = sess.graph.get_tensor_by_name("fullconnection1:0")
-        print fc
+        print(fc)
 
         output_cnn = sess.graph.get_tensor_by_name("output:0")
-        print output_cnn
+        print(output_cnn)
 
         input_x_lstm = sess.graph.get_tensor_by_name("input_lstm:0")
-        print input_x_lstm
+        print(input_x_lstm)
 
         softmax_lstm = sess.graph.get_tensor_by_name("softmax_lstm:0")
-        print softmax_lstm
+        print(softmax_lstm)
         output_lstm = sess.graph.get_tensor_by_name("output_lstm:0")
-        print output_lstm
+        print(output_lstm)
 
         for step_test in range(Test_iterations + 1):
             test_x, test_y = sess.run([test_x_batch, test_y_batch])
@@ -114,15 +114,14 @@ def batchtest():
             # print 0
             prediction_labels = sess.run(output_lstm, feed_dict={input_x_lstm: x_ndarry_lstm})
             print(str(step_test))
-            print "real_label:", test_y
-
+            print("real_label:", test_y)
 
             re_label[ind] = test_y
 
             # prediction_labels = np.argmax(out_softmax, axis=1)
             pr_label[ind] = prediction_labels
-            ind+=1
-            print "predict_label:", prediction_labels
+            ind += 1
+            print("predict_label:", prediction_labels)
             print('')
 
     np.savetxt('../Data/re_label_lstmtrain_addlstm6.txt', re_label)

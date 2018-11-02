@@ -49,10 +49,12 @@ def ReadDataFromTxt(path):
 
     data = np.ndarray((1, 8, 550, 2), dtype=np.float64)
     if len(I) != 4400:
-        print 'error'
+        print
+        'error'
 
     if len(Q) != 4400:
-        print 'error'
+        print
+        'error'
 
     I = I.reshape(8, 550)
     Q = Q.reshape(8, 550)
@@ -75,9 +77,9 @@ def batchtest():
         threads = tf.train.start_queue_runners(sess=sess)
 
         input_x = sess.graph.get_tensor_by_name("input:0")
-        print input_x
+        print(input_x)
         out_softmax = sess.graph.get_tensor_by_name("softmax:0")
-        print out_softmax
+        print(out_softmax)
         # out_label = sess.graph.get_tensor_by_name("output:0")
         # print out_label
 
@@ -88,11 +90,11 @@ def batchtest():
             img_out_softmax = sess.run(out_softmax, feed_dict={input_x: test_x})
 
             print(str(step))
-            print "real_label:", test_y
+            print("real_label:", test_y)
             re_label[step] = test_y
             prediction_labels = np.argmax(img_out_softmax, axis=1)
             pr_label[step] = prediction_labels
-            print "predict_label:", prediction_labels
+            print("predict_label:", prediction_labels)
             print('')
 
     np.savetxt('../Data/re_label.txt', re_label)
@@ -113,9 +115,9 @@ def singletest_data_ad(path):
         sess.run(init)
 
         input_x = sess.graph.get_tensor_by_name("input:0")
-        print input_x
+        print(input_x)
         out_softmax = sess.graph.get_tensor_by_name("softmax:0")
-        print out_softmax
+        print(out_softmax)
         index = 0
         for file in files:
             type = -1
@@ -143,7 +145,7 @@ def singletest_data_ad(path):
             img_out_softmax = sess.run(out_softmax, feed_dict={input_x: test_x})
 
             prediction_labels = np.argmax(img_out_softmax, axis=1)
-            print "tf_predict_label:", prediction_labels, "android_label:", file[0], "really_label", type
+            print("tf_predict_label:", prediction_labels, "android_label:", file[0], "really_label", type)
             si_re_label[index] = type
             si_pr_label_ad[index] = file[0]
             si_pr_label_tf[index] = prediction_labels
@@ -165,9 +167,9 @@ def singletest_data_pc(path):
         sess.run(init)
 
         input_x = sess.graph.get_tensor_by_name("input:0")
-        print input_x
+        print(input_x)
         out_softmax = sess.graph.get_tensor_by_name("softmax:0")
-        print out_softmax
+        print(out_softmax)
         index = 0
         files.sort()
         for file in files:
@@ -179,7 +181,7 @@ def singletest_data_pc(path):
             img_out_softmax = sess.run(out_softmax, feed_dict={input_x: test_x})
 
             prediction_labels = np.argmax(img_out_softmax, axis=1)
-            print "filename:", file, " tf_predict_label:", prediction_labels
+            print("filename:", file, " tf_predict_label:", prediction_labels)
             pc_pr_label_tf[index] = prediction_labels
             pc_re_label[index] = LABELS.index(file[0])
             index = index + 1
@@ -216,5 +218,5 @@ def gg(path):
 
 if __name__ == '__main__':
     singletest_data_pc("/home/dmrf/下载/demodata")
-    #gg("/home/dmrf/下载/demodata")
+    # gg("/home/dmrf/下载/demodata")
     # ReadDataFromTxt("/home/dmrf/下载/demodata/lizhenyan_04_27_A_1524795830456_2")
